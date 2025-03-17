@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style-home.css" />
+    <link rel="stylesheet" href="./css/style-thucdon.css" />
+    <script
+      src="https://kit.fontawesome.com/54f0cb7e4a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="shortcut icon"
+      href="https://thaimarket.vn/wp-content/uploads/2023/03/favicon-thaimarket-50x50.png"
+      type="image/x-icon"
+    />
+    <title>Thực Đơn - Thai Market</title>
+  </head>
+  <body>
+    <section class="top">
+      <div class="container">
+        <div class="row">
+          <div class="logo">
+            <img
+              src="https://thaimarket.vn/wp-content/uploads/2023/03/thaimarket-logo.png"
+              alt="Logo"
+            />
+          </div>
+          <div class="hamburger">
+            <i class="fas fa-bars"></i>
+            <!-- Biểu tượng hamburger từ Font Awesome -->
+          </div>
+          <div class="menu-items">
+            <a href="index.html">Trang chủ</a>
+            <a href="thucdon.html">Thực đơn</a>
+            <a href="./khampha.html">Khám phá</a>
+            <a href="./khuyenmai.html" class="active">Khuyến mãi</a>
+            <a href="#about">Liên hệ</a>
+            <a href="#order" class="order-btn">Đặt bàn</a>
+            <a href="#login" class="login-btn">Đăng nhập/Đăng ký</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+      <div class="menu-header">
+        <div class="content">
+          <h1>Thực đơn chuẩn Thái</h1>
+          <h2>Thực đơn 3 miền của Thai Market</h2>
+          <div class="menu-tabs">
+            <span class="tab-button active" data-tab="mien-bac">Miền Bắc</span>
+            <span class="tab-button" data-tab="mien-trung">Miền Trung</span>
+            <span class="tab-button" data-tab="mien-nam">Miền Nam</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-content container">
+        <!-- Miền Bắc Content -->
+        <div class="tab-content active" id="mien-bac">
+          <div class="row">
+            <div class="restaurant-card">
+              <h3>Thai Market Restaurant - 35 Lê Văn Thiêm</h3>
+              <p>
+                35 Lê Văn Thiêm (104 Ngụy Như Kon Tum) Thanh Xuân, Hà Nội - 0934
+                685 688
+              </p>
+              <img
+                src="https://thaimarket.vn/wp-content/uploads/2021/12/banner-thuc-don-1.webp"
+                alt="Mien Bắc Restaurant"
+              />
+              <div class="button-group">
+                <button class="view-menu-btn">Xem thực đơn</button>
+                <button
+                  class="view-location-btn"
+                  onclick="window.open('https://maps.google.com/?q=35+Lê+Văn+Thiêm,+Thanh+Xuân,+Hà+Nội', '_blank')"
+                >
+                  Xem địa điểm
+                </button>
+              </div>
+              <div class="menu-list" style="display: none">
+                <h4>Danh sách món ăn</h4>
+                <ul>
+                  <li>Tom Yum Gà - 120,000 VNĐ</li>
+                  <li>Phở Thái - 80,000 VNĐ</li>
+                  <li>Gỏi Gà Xé Phay - 90,000 VNĐ</li>
+                  <li>Cơm Chiên Hải Sản - 110,000 VNĐ</li>
+                </ul>
+              </div>
+            </div>
+            <div class="restaurant-card">
+              <h3>Thai Market Restaurant - 112 Trung Hòa</h3>
+              <p>112 Trung Hòa, Cầu Giấy, Hà Nội - 0847 788 899</p>
+              <img
+                src="https://thaimarket.vn/wp-content/uploads/2021/12/thaimarket-trunghoa-1024x847.webp"
+                alt="Miền Bắc Restaurant"
+              />
+              <div class="button-group">
+                <button class="view-menu-btn">Xem thực đơn</button>
+                <button
+                  class="view-location-btn"
+                  onclick="window.open('https://maps.google.com/?q=112+Trung+Hòa,+Cầu+Giấy,+Hà+Nội', '_blank')"
+                >
+                  Xem địa điểm
+                </button>
+              </div>
+              <div class="menu-list" style="display: none">
+                <h4>Danh sách món ăn</h4>
+                <ul>
+                  <li>Lẩu Thái Hải Sản - 250,000 VNĐ</li>
+                  <li>Cá Chiên Mắm Xoài - 150,000 VNĐ</li>
+                  <li>Bún Thái - 85,000 VNĐ</li>
+                  <li>Salad Thái - 70,000 VNĐ</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Miền Trung Content -->
+        <div class="tab-content" id="mien-trung">
+          <div class="row">
+            <div class="restaurant-card">
+              <h3>Thai Market Restaurant - 04 Trần Quốc Toản</h3>
+              <p>04 Trần Quốc Toản - 1900 02 07</p>
+              <img
+                src="https://thaimarket.vn/wp-content/uploads/2021/12/banner-thuc-don7-1.webp"
+                alt="Mien Trung Restaurant"
+              />
+              <div class="button-group">
+                <button class="view-menu-btn">Xem thực đơn</button>
+                <button
+                  class="view-location-btn"
+                  onclick="window.open('https://maps.google.com/?q=04+Trần+Quốc+Toản,+Đà+Nẵng', '_blank')"
+                >
+                  Xem địa điểm
+                </button>
+              </div>
+              <div class="menu-list" style="display: none">
+                <h4>Danh sách món ăn</h4>
+                <ul>
+                  <li>Tom Yum Tôm - 130,000 VNĐ</li>
+                  <li>Gỏi Bò Thái - 95,000 VNĐ</li>
+                  <li>Cơm Chiên Dứa - 100,000 VNĐ</li>
+                  <li>Chả Giò Thái - 60,000 VNĐ</li>
+                </ul>
+              </div>
+            </div>
+            <div class="restaurant-card">
+              <h3>Thai Market Restaurant - 48 Thái Phiên</h3>
+              <p>48 Thái Phiên, Hải Châu, Đà Nẵng - 1900 02 07</p>
+              <img
+                src="https://thaimarket.vn/wp-content/uploads/2021/12/banner-thuc-don4-1.webp"
+                alt="Miền Trung Restaurant"
+              />
+              <div class="button-group">
+                <button class="view-menu-btn">Xem thực đơn</button>
+                <button
+                  class="view-location-btn"
+                  onclick="window.open('https://maps.google.com/?q=48+Thái+Phiên,+Hải+Châu,+Đà+Nẵng', '_blank')"
+                >
+                  Xem địa điểm
+                </button>
+              </div>
+              <div class="menu-list" style="display: none">
+                <h4>Danh sách món ăn</h4>
+                <ul>
+                  <li>Lẩu Thái Chua Cay - 220,000 VNĐ</li>
+                  <li>Gỏi Hải Sản Thái - 110,000 VNĐ</li>
+                  <li>Bún Gạo Xào Thái - 90,000 VNĐ</li>
+                  <li>Xôi Xoài - 50,000 VNĐ</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Miền Nam Content -->
+        <div class="tab-content" id="mien-nam">
+          <div class="row">
+            <div class="restaurant-card">
+              <h3>Thai Market Restaurant - 95 Cao Thắng</h3>
+              <p>Phường 3, Quận 3, Hồ Chí Minh - 0283 9292 668</p>
+              <img
+                src="https://thaimarket.vn/wp-content/uploads/2023/04/banner-thuc-don10-1.webp"
+                alt="Mien Nam Restaurant"
+              />
+              <div class="button-group">
+                <button class="view-menu-btn">Xem thực đơn</button>
+                <button
+                  class="view-location-btn"
+                  onclick="window.open('https://maps.google.com/?q=95+Cao+Thắng,+Phường+3,+Quận+3,+Hồ+Chí+Minh', '_blank')"
+                >
+                  Xem địa điểm
+                </button>
+              </div>
+              <div class="menu-list" style="display: none">
+                <h4>Danh sách món ăn</h4>
+                <ul>
+                  <li>Tom Yum Hải Sản - 140,000 VNĐ</li>
+                  <li>Cơm Gà Thái - 90,000 VNĐ</li>
+                  <li>Gỏi Xoài Tôm - 100,000 VNĐ</li>
+                  <li>Mực Chiên Giòn - 120,000 VNĐ</li>
+                </ul>
+              </div>
+            </div>
+            <div class="restaurant-card">
+              <h3>Thai Market Restaurant - Tầng 4, GigaMall Thủ Đức</h3>
+              <p>Thủ Đức, Hồ Chí Minh - 0283 5358 646</p>
+              <img
+                src="https://thaimarket.vn/wp-content/uploads/2023/04/banner-thuc-don11.webp"
+                alt="Miền Nam Restaurant"
+              />
+              <div class="button-group">
+                <button class="view-menu-btn">Xem thực đơn</button>
+                <button
+                  class="view-location-btn"
+                  onclick="window.open('https://maps.google.com/?q=GigaMall+Thủ+Đức,+Hồ+Chí+Minh', '_blank')"
+                >
+                  Xem địa điểm
+                </button>
+              </div>
+              <div class="menu-list" style="display: none">
+                <h4>Danh sách món ăn</h4>
+                <ul>
+                  <li>Lẩu Thái Tôm - 230,000 VNĐ</li>
+                  <li>Cá Hấp Lá Chuối - 160,000 VNĐ</li>
+                  <li>Phở Thái Bò - 95,000 VNĐ</li>
+                  <li>Chè Thái - 45,000 VNĐ</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/script-thucdon.js"></script>
+    <script src="./js/script-home.js"></script>
+  </body>
+</html>

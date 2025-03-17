@@ -1,0 +1,225 @@
+/* Nhập font và biến từ style-home.css */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+:root {
+  --main-color: #fff0b3;
+  --sub-color: #ffffcc;
+  --lead-color: #000066;
+  --text-color: #000066;
+}
+
+/* Thiết lập lại kiểu mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.container {
+  margin: auto;
+  max-width: 1200px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Phần Thực Đơn */
+.menu-section {
+  background-color: var(--main-color);
+  padding-top: 80px; /* Điều chỉnh cho thanh điều hướng cố định */
+}
+
+.menu-header {
+  text-align: center;
+  position: relative;
+  padding: 150px 0 50px;
+  background-image: url("https://pasgo.vn/Upload/anh-chi-tiet/slide-thai-market-13-normal-2266127258662.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.menu-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.menu-header .content {
+  position: relative;
+  z-index: 2;
+}
+
+.menu-header .content h1 {
+  font-size: 70px;
+  color: #fff; /* Chữ sáng (trắng) */
+  font-family: "Dancing Script";
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Thêm bóng để chữ nổi hơn */
+}
+
+.menu-header .content h2 {
+  font-size: 40px;
+  color: #fff0b3; /* Chữ sáng (vàng nhạt) */
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Thêm bóng để chữ nổi hơn */
+}
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* Tăng khoảng cách giữa các tab để mũi tên cách xa hơn */
+  position: relative;
+}
+
+.tab-button {
+  font-size: 20px; /* Tăng kích thước chữ */
+  color: #fff; /* Chuyển sang màu trắng để nổi bật */
+  font-family: "Roboto", sans-serif;
+  font-weight: 500; /* Chữ đậm hơn */
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Thêm bóng chữ */
+}
+
+.tab-button:hover {
+  color: #cca300; /* Màu vàng khi hover */
+  transform: translateY(-2px); /* Nhấc lên một chút khi hover */
+}
+
+.tab-button.active {
+  color: #cca300; /* Màu vàng khi active */
+  font-weight: 700; /* Đậm hơn khi active */
+  transform: scale(1.1); /* Phóng to nhẹ khi active */
+}
+
+.tab-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #cca300; /* Gạch dưới màu vàng */
+  transition: width 0.3s ease;
+}
+
+.tab-button.active::after {
+  width: 100%;
+}
+
+.menu-content {
+  padding: 50px 0;
+}
+
+.tab-content {
+  display: none;
+  width: 100%;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.restaurant-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: calc(50% - 20px);
+  margin: 10px;
+}
+
+.restaurant-card h3 {
+  font-size: 24px;
+  color: var(--lead-color);
+  margin-bottom: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.restaurant-card p {
+  font-size: 16px;
+  color: #cca300;
+  margin-bottom: 15px;
+  font-family: "Roboto", sans-serif;
+}
+
+.restaurant-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Kiểu dáng cho nút */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.view-menu-btn,
+.view-location-btn {
+  background-color: transparent;
+  border: 2px solid #cca300;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: var(--lead-color);
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-menu-btn:hover,
+.view-location-btn:hover {
+  background-color: #cca300;
+  color: white;
+}
+
+/* Kiểu dáng cho danh sách món ăn */
+.menu-list {
+  margin-top: 20px;
+  text-align: left;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.menu-list h4 {
+  font-size: 18px;
+  color: var(--lead-color);
+  margin-bottom: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.menu-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-list ul li {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  font-family: "Roboto", sans-serif;
+}

@@ -1,0 +1,448 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+:root {
+  --main-color: #fff0b3;
+  --sub-color: #ffffcc;
+  --lead-color: #000066;
+  --text-color: #000066;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.big-image-content-btn {
+  background-color: transparent;
+  padding: 15px 30px;
+  border: 2px solid var(--sub-color);
+  border-radius: 50px;
+  color: #fff0b3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.big-image-content-btn:hover {
+  background-color: white;
+  color: #b38f00;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.justify-content {
+  justify-content: space-between;
+}
+
+.container {
+  margin: auto;
+  max-width: 1200px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Top Navigation */
+/* Top Navigation */
+.top {
+  background-color: #ffdf80;
+  width: 100vw;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease,
+    transform 0.5s ease-in-out;
+}
+
+.top.transparent {
+  background-color: transparent;
+  box-shadow: none;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.top.active {
+  background-color: var(--main-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top .logo img {
+  width: 130px;
+  height: auto;
+  transition: width 0.3s ease;
+}
+
+.top .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.top .menu-items {
+  display: flex;
+  align-items: center;
+}
+
+.top .menu-items a {
+  color: var(--lead-color);
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  margin: 0 15px; /* Khôi phục khoảng cách 15px giữa các liên kết như cũ */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.top .menu-items a:hover {
+  color: #cca300;
+}
+
+/* Nút "Đặt bàn" */
+.top .menu-items .order-btn {
+  background-color: #cca300;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 20px; /* Giữ khoảng cách với nút bên trái */
+}
+
+.top .menu-items .order-btn:hover {
+  background-color: #b38f00;
+}
+
+/* Nút "Đăng nhập/Đăng ký" */
+.top .menu-items .login-btn {
+  background-color: #000066;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 20px; /* Giữ khoảng cách với nút "Đặt bàn" */
+  transition: background-color 0.3s ease;
+}
+
+.top .menu-items .login-btn:hover {
+  background-color: #00004d;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  color: var(--lead-color);
+  cursor: pointer;
+}
+
+/* Media Queries cho responsive */
+@media (max-width: 1024px) {
+  .top .logo img {
+    width: 100px;
+  }
+
+  .top .menu-items a {
+    font-size: 16px;
+    margin: 0 12px; /* Giảm nhẹ khoảng cách trên tablet */
+  }
+
+  .top .menu-items .order-btn,
+  .top .menu-items .login-btn {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top .row {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .top .logo img {
+    width: 80px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .top .menu-items {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .top .menu-items.active {
+    display: flex;
+  }
+
+  .top .menu-items a {
+    font-size: 16px;
+    margin: 10px 0; /* Khoảng cách dọc khi menu dọc */
+    width: 100%;
+    text-align: left;
+  }
+
+  .top .menu-items .order-btn,
+  .top .menu-items .login-btn {
+    font-size: 16px;
+    padding: 8px 15px;
+    width: auto;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .top .logo img {
+    width: 60px;
+  }
+
+  .top .row {
+    padding: 5px 10px;
+  }
+
+  .top .menu-items a {
+    font-size: 14px;
+    margin: 8px 0; /* Giảm khoảng cách trên màn hình nhỏ */
+  }
+
+  .top .menu-items .order-btn,
+  .top .menu-items .login-btn {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+/* big image */
+.big-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.big-image::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://scontent.fsgn8-4.fna.fbcdn.net/v/t39.30808-6/351122300_286638150473581_6801104843967542213_n.png?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGD0v9Xv-x5QK-bsu09oQ_t3JUEfBUSJ9HclQR8FRIn0YyjrrYVJje5S7_LVr0vmUdkoGXyg69RXbeX2EKdzMlH&_nc_ohc=0Lr4Xnk2yCMQ7kNvgGRxOFF&_nc_oc=Adjj6Vio1iIDam5R3JUnPN0aHeKP92uIqBUuQsS06DXgLkbaIIEgAO1HELiaA_lXuH9eQBMMFVRuW1EIG75MUiUs&_nc_zt=23&_nc_ht=scontent.fsgn8-4.fna&_nc_gid=A1wT3bzIQAHqx4qHEry3z-s&oh=00_AYFlI3Ha0ZD8PoZX4d7iOd1j9IbLUG61D2c2UkrAKjdGcw&oe=67D73410");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: -2;
+  animation: Inout 5s infinite;
+}
+
+@keyframes Inout {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.big-image::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4;
+  z-index: -2;
+}
+
+.big-image .big-image-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.big-image .big-image-content h2 {
+  font-size: 70px;
+  color: white;
+  font-family: "Dancing Script", cursive;
+}
+
+.big-image .big-image-content p {
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.big-image-content h2,
+.big-image-content p,
+.big-image-content-btn {
+  animation: zoomIn 1s ease forwards;
+}
+
+.big-image-content h2 {
+  animation-delay: 0.2s;
+}
+
+.big-image-content p {
+  animation-delay: 0.4s;
+}
+
+.big-image-content-btn {
+  animation-delay: 0.6s;
+}
+
+/* about */
+.about {
+  background-color: var(--main-color);
+}
+
+.section-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 50px;
+  color: #000066;
+}
+
+.section-title h2::before {
+  content: attr(data-title);
+  display: block;
+  color: #cca300;
+  font-family: "Dancing Script";
+}
+
+.about .about-item h2 {
+  color: var(--lead-color);
+  font-size: 45px;
+  font-family: "Roboto", sans-serif;
+}
+
+.about .about-item p {
+  font-size: 25px;
+  margin: 15px 0 30px;
+  color: #cca300;
+  font-family: "Roboto", sans-serif;
+}
+
+.about .about-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.about-item {
+  width: calc(100% / 2);
+  padding: 15px;
+}
+
+.about-item-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.about-item-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.about-item-img span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #ffffcc;
+  font-family: "Dancing Script";
+  font-weight: bold;
+  font-size: 30px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.about-item-img::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #caa300;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: xoayVong 5s infinite linear;
+  z-index: 1;
+}
+
+@keyframes xoayVong {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.about .btn {
+  background-color: var(--sub-color);
+  padding: 15px 30px;
+  border: 2px solid var(--lead-color);
+  border-radius: 50px;
+  color: #000066;
+  cursor: pointer;
+  transition: all 0.7s ease;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about .btn:hover {
+  background-color: #00004d;
+  color: white;
+}

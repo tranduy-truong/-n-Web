@@ -1,0 +1,278 @@
+/* Nhập font và biến */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+:root {
+  --main-color: #fff0b3;
+  --sub-color: #ffffcc;
+  --lead-color: #000066;
+  --text-color: #000066;
+  --yellow-border: #cca300;
+}
+
+/* Menu Section */
+.menu-section {
+  background-color: var(--main-color);
+  padding-top: 80px; /* Điều chỉnh cho thanh điều hướng cố định */
+  background-image: url("https://thaimarket.vn/wp-content/uploads/2023/04/pattern-thai-market.jpg");
+  background-size: 200px;
+  background-repeat: repeat;
+}
+
+.menu-header {
+  text-align: center;
+  position: relative;
+  padding: 150px 0 50px;
+  background-image: url("https://pasgo.vn/Upload/anh-chi-tiet/slide-thai-market-13-normal-2266127258662.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.menu-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.menu-header .content {
+  position: relative;
+  z-index: 2;
+}
+
+.menu-header .content h1 {
+  font-size: 70px;
+  color: #fff;
+  font-family: "Dancing Script";
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.menu-header .content h2 {
+  font-size: 40px;
+  color: var(--sub-color);
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+}
+
+.tab-button {
+  font-size: 20px; /* Tăng kích thước chữ */
+  color: #fff; /* Chuyển sang màu trắng để nổi bật */
+  font-family: "Roboto", sans-serif;
+  font-weight: 500; /* Chữ đậm hơn */
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Thêm bóng chữ */
+}
+
+.tab-button:hover {
+  color: var(--yellow-border); /* Màu vàng khi hover */
+  transform: translateY(-2px); /* Nhấc lên một chút khi hover */
+}
+
+.tab-button.active {
+  color: var(--yellow-border); /* Màu vàng khi active */
+  font-weight: 700; /* Đậm hơn khi active */
+  transform: scale(1.1); /* Phóng to nhẹ khi active */
+}
+
+.tab-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--yellow-border); /* Gạch dưới màu vàng */
+  transition: width 0.3s ease;
+}
+
+.tab-button.active::after {
+  width: 100%;
+}
+
+.menu-content {
+  padding: 50px 0;
+}
+
+.tab-content {
+  display: none;
+  width: 100%;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Promo Grid */
+.promo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 10px; /* Thêm padding để tránh dính lề */
+}
+
+.promo-card {
+  background-color: white;
+  padding: 15px; /* Giảm padding để thẻ nhỏ hơn */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: calc(25% - 20px); /* Giảm xuống để hiển thị 4 thẻ trên một hàng */
+  margin: 10px 0; /* Chỉ margin dọc để giữ khoảng cách đều */
+  transition: transform 0.3s ease;
+  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+}
+
+.promo-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px; /* Giảm margin-bottom để tiết kiệm không gian */
+  object-fit: cover;
+  height: 150px; /* Đặt chiều cao cố định để các hình đồng đều */
+  object-fit: cover; /* Đảm bảo hình không bị méo */
+}
+
+/* Media Queries để responsive */
+@media (max-width: 1024px) {
+  .promo-card {
+    width: calc(33.33% - 20px); /* 3 thẻ trên tablet lớn */
+  }
+}
+
+@media (max-width: 768px) {
+  .promo-card {
+    width: calc(50% - 20px); /* 2 thẻ trên tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-card {
+    width: calc(100% - 20px); /* 1 thẻ trên điện thoại */
+    height: auto; /* Tự động điều chỉnh chiều cao trên điện thoại */
+  }
+
+  .promo-card img {
+    height: auto; /* Chiều cao hình tự động trên điện thoại */
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: var(--lead-color);
+  color: white;
+  padding: 40px 0;
+}
+
+.footer-col {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer-col h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  color: var(--yellow-border);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .top .menu-items {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .top .menu-items a {
+    margin: 5px 0;
+  }
+
+  .menu-header .content h1 {
+    font-size: 50px;
+  }
+
+  .menu-header .content h2 {
+    font-size: 28px;
+  }
+
+  .menu-tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .tab-button {
+    font-size: 18px; /* Giảm kích thước chữ trên tablet */
+  }
+
+  .promo-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .promo-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-header .content h1 {
+    font-size: 40px;
+  }
+
+  .menu-header .content h2 {
+    font-size: 20px;
+  }
+
+  .tab-button {
+    font-size: 16px; /* Giảm kích thước chữ trên điện thoại */
+  }
+
+  .promo-card {
+    width: 100%;
+  }
+}
